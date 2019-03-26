@@ -11,8 +11,7 @@
 	"bugs": {
 		"url": "https://github.com/Microsoft/vscode-nls/issues"
 	},
-	"main": "./lib/main.js",
-	"typings": "./lib/main",
+	"main": "./src/main",
 	"devDependencies": {
 		"@types/node": "^6.0.96",
 		"@types/mocha": "^2.2.46",
