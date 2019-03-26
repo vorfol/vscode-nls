@@ -483,6 +483,12 @@ export function loadMessageBundle(file?: string): LocalizeFunc {
 		// localize function.
 		return localize;
 	}
+	
+	//in case of using webpack with options = node: { __dirname: false, __filename: true }
+	if (path.dirname(__filename) !== __dirname) {
+		file = path.resolve(__dirname, file);
+	}
+	
 	// Remove extension since we load json files.
 	let ext = path.extname(file);
 	if (ext) {
