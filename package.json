@@ -20,7 +20,7 @@
 		"typescript": "^2.6.2"
 	},
 	"scripts": {
-		"prepublish": "tsc -p ./src",
+		"prepare": "tsc -p ./src",
 		"compile": "tsc -p ./src",
 		"watch": "tsc -w -p ./src",
 		"test": "mocha"
