@@ -486,7 +486,11 @@ export function loadMessageBundle(file?: string): LocalizeFunc {
 	
 	//in case of using webpack with options = node: { __dirname: false, __filename: true }
 	if (path.dirname(__filename) !== __dirname) {
-		file = path.resolve(__dirname, file);
+		let rg = /\\/g;
+		if (path.sep === "\\") {
+			rg = /\//g; 
+		}
+		file = path.resolve(__dirname, file.replace(rg, path.sep));
 	}
 	
 	// Remove extension since we load json files.
